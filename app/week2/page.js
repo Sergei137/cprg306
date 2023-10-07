@@ -1,6 +1,6 @@
 // week2 page
 
-import StudentInfo from '../StudentInfo'
+import StudentInfo from '../StudentInfo';
 
 export default function Week2() {
     return(

@@ -1,3 +1,18 @@
+// Item list component
+
+// import React from 'react'
+
+export default function ItemList(name, quantity, category) {
+  return (
+    <div>
+      <p>{name}</p>
+      <p>{quantity}</p>
+      <p>{category}</p>
+    </div>
+  );
+}
+
+// Items
 const item1 = {
     name: "milk, 4 L 🥛",
     quantity: 1,
