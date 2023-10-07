@@ -1,17 +1,23 @@
 // item component
 
-// import React from 'react';
+import React from 'react';
 import ItemList from './item-list';
 
-export default function Item(name, quantity, category) {
+export default function Item({name, quantity, category}) {
     return (
         <div>
             <ul>
-                <li>{name}</li>
-                <li>{quantity}</li>
-                <li>{category}</li>
+                <li>Name: {name}</li>
+                <li>Quantity: {quantity}</li>
+                <li>Category: {category}</li>
             </ul>
         </div>
+
+
+
+        // <div>
+        //     <ItemList></ItemList>
+        // </div>
     );
 }
 
