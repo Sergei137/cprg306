@@ -1,13 +1,13 @@
 // week3 page 
-import React from 'react';
-import Item from './item';
 
-export default function Week3() {
+import ItemList from './item-list';
+
+export default function Week3Page() {
     return(
-        <div>
+        <main>
             <h1>My Shopping List</h1>
             <br></br>
-            <Item></Item>
-        </div>
+            <ItemList></ItemList>
+        </main>
     );
 }

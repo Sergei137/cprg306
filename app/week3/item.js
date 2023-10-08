@@ -1,8 +1,5 @@
 // item component
 
-import React from 'react';
-import ItemList from './item-list';
-
 export default function Item({name, quantity, category}) {
     return (
         <div>
@@ -12,12 +9,6 @@ export default function Item({name, quantity, category}) {
                 <li>Category: {category}</li>
             </ul>
         </div>
-
-
-
-        // <div>
-        //     <ItemList></ItemList>
-        // </div>
     );
-}
+};
 

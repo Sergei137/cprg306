@@ -1,9 +1,9 @@
-// Home/root page
+// Root page
 
 import StudentInfo from './StudentInfo';
 import Link from 'next/link';
 
-export default function Home() {
+export default function RootPage() {
   return (
     <div>
       <h1>CPRG 306: Web Development 2 Assignments</h1>

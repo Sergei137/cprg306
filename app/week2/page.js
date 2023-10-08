@@ -2,12 +2,12 @@
 
 import StudentInfo from '../StudentInfo';
 
-export default function Week2() {
+export default function Week2Page() {
     return(
         <div>
             <h1>My Shopping List</h1>
             <br></br>
             <StudentInfo />
         </div>
-    )
+    );
 }
