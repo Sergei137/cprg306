@@ -2,6 +2,7 @@
 
 import ItemList from './item-list';
 
+// display shopping list
 export default function Week3Page() {
     return(
         <main>

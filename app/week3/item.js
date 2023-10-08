@@ -1,5 +1,6 @@
 // item component
 
+// render item list component
 export default function Item({name, quantity, category}) {
     return (
         <div>
@@ -10,5 +11,4 @@ export default function Item({name, quantity, category}) {
             </ul>
         </div>
     );
-};
-
+}
