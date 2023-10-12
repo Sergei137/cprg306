@@ -13,8 +13,14 @@ function CategoryFunction() {
     const [category, setCategory] = useState("produce");
 }
 
+function handleSubmit(event) {
+    event.preventDefault();
+}
 
-
+// test code
+const incremetQuantity = () => {
+    setQuantity(quantity + 1);
+}
 
 
 
