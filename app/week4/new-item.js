@@ -51,7 +51,7 @@ export default function NewItem() {
                     className="w-full border border-black rounded-md py-2 px-3"></input>
                 </label>
             </div>
-            <div className="mb-10">
+            <div className="mb-8">
                 <label>Category:
                     <select value={category} onChange={(event) => setCategory(event.target.value)} required className="bg-white w-full border border-black rounded-md py-2 px-3">
                         <option value="" disabled hidden>Select a category</option>
