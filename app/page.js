@@ -13,6 +13,7 @@ export default function RootPage() {
       <p>Assignments:</p>
       <p><Link href="week2" target="_blank">Week 2</Link></p>
       <p><Link href="week3" target="_blank">Week 3</Link></p>
+      <p><Link href="week4" target="_blank">Week 4</Link></p>
     </div>
   );
 }

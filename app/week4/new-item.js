@@ -1,15 +1,17 @@
-"use strict";
+// new item component
+
+"use client";
 import { useState } from "react"
 
-function NameFunction() {
+function nameFunction() {
     const [name, setName] = useState("");
 }
 
-function QuantityFunction() {
+function quantityFunction() {
     const [quantity, setQuantity] = useState(1);
 }
 
-function CategoryFunction() {
+function categoryFunction() {
     const [category, setCategory] = useState("produce");
 }
 
@@ -17,12 +19,11 @@ function handleSubmit(event) {
     event.preventDefault();
 }
 
-// test code
-const incremetQuantity = () => {
-    setQuantity(quantity + 1);
+
+
+function NewItem() {
+
 }
-
-
 
 
 
