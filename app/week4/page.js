@@ -4,7 +4,7 @@ import NewItem from './new-item';
 
 export default function Page() {
     return(
-        <main>
+        <main className="bg-red-300">
             <div>
                 <NewItem></NewItem>
             </div>
