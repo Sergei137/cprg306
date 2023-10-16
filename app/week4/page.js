@@ -1,12 +1,12 @@
 // week4 page
 
-
+import NewItem from './new-item';
 
 export default function Page() {
     return(
         <main>
             <div>
-                <p>Week 4</p>
+                <NewItem></NewItem>
             </div>
         </main>
     );
