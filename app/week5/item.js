@@ -1,10 +1,11 @@
 // item component
 
 // render item list component
-export default function Item({name, quantity, category}) {
+function Item({id, name, quantity, category}) {
     return (
         <div className="border border-black bg-white rounded-md p-4 mb-4">
             <ul>
+                <li>ID: {id}</li>
                 <li>Name: {name}</li>
                 <li>Quantity: {quantity}</li>
                 <li>Category: {category}</li>
@@ -12,3 +13,5 @@ export default function Item({name, quantity, category}) {
         </div>
     );
 }
+export default Item;
+
