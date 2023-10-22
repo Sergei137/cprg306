@@ -6,59 +6,32 @@ import Item from './item'
 import items from './items.json'
 
 function ItemList() {
-    const [sortBy, setSortBy] = useState('name');
-
+    const [sortBy, setSortBy] = useState('category');
 
     // sort items by category, then by name
-    // const sortAll = (a, b) => {
-    //     if (a.category === b.category) {
-    //         return a.name.localeCompare(b.name);
-    //     } else {
-    //         return a.category.localeCompare(b.category);
-    //     }
-    // };
-
+    const sortCategory = (a, b) => {
+        if (a.category === b.category) {
+            return a.name.localeCompare(b.name);
+        } else {
+            return a.category.localeCompare(b.category);
+        }
+    };
 
     // sort items by name or category
     const sortedItems = items.sort((a, b) => {
         if (sortBy === 'name') { // sort by name
             return a.name.localeCompare(b.name); 
         } else if (sortBy === 'category') { // sort by category
-            return a.category.localeCompare(b.category);
-        } else if (sortBy === 'sortAll') {
-            if (a.category === b.category) {
-                return a.name.localeCompare(b.name);
-            } else {
-                return a.category.localeCompare(b.category);
-            }
+            return sortCategory(a, b);
         } else {
             return 0;
         }
     });
 
-    // sortBy set to 'name'
-    const handleSortByName = () => {
-        setSortBy('name');
-    };
-
-    // sortBy set to 'category'
-    const handleSortByCategory = () => {
-        setSortBy('category');
-    };
-
-    // sortBy set to 'sortAll'
-    const handleSortAll = () => {
-        setSortBy('sortAll');
-    };
-
-
-
     return (
         <div>   
-            <button onClick={handleSortByName}>Sort by Name</button>
-            <button onClick={handleSortByCategory}>Sort by Category</button>
-            <button onClick={() => setSortBy('sortAll')}>Sort All</button>
-            {/* <button onclick={handleSortAll}>Sort All</button> */}
+            <button onClick={() => setSortBy('name')} className="bg-blue-500 active:bg-blue-300 text-white font-bold py-2 px-3 rounded mb-10 mr-4">Sort by Name</button>
+            <button onClick={() => setSortBy('category')} className="bg-blue-500 active:bg-blue-300 text-white font-bold py-2 px-3 rounded mb-10">Sort by Category</button>
             {sortedItems.map((item) => (
                 <Item id={item.id} name={item.name} quantity={item.quantity} category={item.category}/>
             ))}
@@ -66,15 +39,3 @@ function ItemList() {
     );
 };
 export default ItemList;
-
-//<Item name={item1.name} quantity={item1.quantity} category={item1.category}></Item>
-
-// let { a:b } 
-// log(b)
-
-// let cars = [
-    //{m: "", b: ""}
-    //{m: "", b: ""}
-    //{m: "", b: ""}
-//];
-

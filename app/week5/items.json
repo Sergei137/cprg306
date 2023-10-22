@@ -60,15 +60,15 @@
       "category": "household"
     },
     {
-      "id": "11k2J3K1H2GJKH12",
-      "name": "dish soap 🍽️",
-      "quantity": 1,
-      "category": "household"
-    },
-    {
       "id": "12GJKH12gkHG31h1",
       "name": "hand soap 🧼",
       "quantity": 4,
+      "category": "household"
+    },
+    {
+      "id": "11k2J3K1H2GJKH12",
+      "name": "dish soap 🍽️",
+      "quantity": 1,
       "category": "household"
     }
 ]
