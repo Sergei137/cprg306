@@ -3,9 +3,8 @@
 "use client";
 import { useState } from "react"
 import Item from './item'
-import items from './items.json'
 
-function ItemList() {
+export default function ItemList({ items }) {
     const [sortBy, setSortBy] = useState('category');
 
     // sort items by category, then by name
@@ -18,7 +17,7 @@ function ItemList() {
     };
 
     // sort items by name or category
-    const sortedItems = items.sort((a, b) => {
+    const sortedItems = [...items].sort((a, b) => {
         if (sortBy === 'name') { // sort by name
             return a.name.localeCompare(b.name); 
         } else if (sortBy === 'category') { // sort by category
@@ -29,13 +28,14 @@ function ItemList() {
     });
 
     return (
-        <div>   
-            <button onClick={() => setSortBy('name')} className="bg-blue-500 active:bg-blue-300 text-white font-bold py-2 px-3 rounded mb-10 mr-4">Sort by Name</button>
-            <button onClick={() => setSortBy('category')} className="bg-blue-500 active:bg-blue-300 text-white font-bold py-2 px-3 rounded mb-10">Sort by Category</button>
+        <div>
+            <div className="flex justify-center mt-8 mb-8">
+                <button onClick={() => setSortBy('name')} className="bg-blue-500 active:bg-blue-300 text-white font-bold py-2 px-3 rounded mr-4">Sort by Name</button>
+                <button onClick={() => setSortBy('category')} className="bg-blue-500 active:bg-blue-300 text-white font-bold py-2 px-3 rounded">Sort by Category</button>
+            </div>
             {sortedItems.map((item) => (
-                <Item id={item.id} name={item.name} quantity={item.quantity} category={item.category}/>
+                <Item key={item.id} id={item.id} name={item.name} quantity={item.quantity} category={item.category}/>
             ))}
         </div>
     );
 };
-export default ItemList;

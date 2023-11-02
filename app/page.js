@@ -15,6 +15,7 @@ export default function RootPage() {
       <p><Link href="week3" target="_blank">Week 3</Link></p>
       <p><Link href="week4" target="_blank">Week 4</Link></p>
       <p><Link href="week5" target="_blank">Week 5</Link></p>
+      <p><Link href="week6" target="_blank">Week 6</Link></p>
     </div>
   );
 }

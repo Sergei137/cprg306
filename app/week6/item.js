@@ -3,12 +3,11 @@
 // render item list component
 function Item({id, name, quantity, category}) {
     return (
-        <div className="border border-black bg-white rounded-md p-4 mb-4">
+        <div className="border border-black bg-white p-4 mb-4">
             <ul>
-                {/* <li>ID: {id}</li> */}
-                <li>Name: {name}</li>
-                <li>Quantity: {quantity}</li>
-                <li>Category: {category}</li>
+                <li key={`${id}-name`}>Name: {name}</li>
+                <li key={`${id}-quantity`}>Quantity: {quantity}</li>
+                <li key={`${id}-category`}>Category: {category}</li>
             </ul>
         </div>
     );
