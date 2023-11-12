@@ -4,7 +4,7 @@
 import { useState } from "react"
 import Item from './item'
 
-export default function ItemList({ items }) {
+export default function ItemList({ items, onItemSelect }) {
     const [sortBy, setSortBy] = useState('category');
 
     // sort items by category, then by name
@@ -34,7 +34,7 @@ export default function ItemList({ items }) {
                 <button onClick={() => setSortBy('category')} className="bg-blue-500 active:bg-blue-300 text-white font-bold py-2 px-3 rounded">Sort by Category</button>
             </div>
             {sortedItems.map((item) => (
-                <Item key={item.id} id={item.id} name={item.name} quantity={item.quantity} category={item.category}/>
+                <Item key={item.id} id={item.id} name={item.name} quantity={item.quantity} category={item.category} onSelect={() => onItemSelect(item)} />
             ))}
         </div>
     );
