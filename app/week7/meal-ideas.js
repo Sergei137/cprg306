@@ -23,11 +23,12 @@ function MealIdeas({ ingredient }) {
         return <div>No meal ideas for {ingredient}</div>;
     } else {
         return (
-            <div>
-                <h1>Meal Ideas</h1>
+            <div  className="border border-black bg-white p-4 mb-4">
+                <h2 className="text-4xl mb-4">Meal Ideas</h2>
                 <ul>
                     {meals.map((meal) => (
-                        <li key={meal.idMeal}>{meal.strMeal}
+                        <li key={meal.idMeal} className="mb-8 text-2xl">
+                            {meal.strMeal}
                             <img src={meal.strMealThumb} alt={meal.strMeal} />
                         </li>
                     ))}

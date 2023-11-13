@@ -33,17 +33,22 @@ function Page() {
 
     return(
         <main className="bg-red-300 p-10">
-            <h1 className="text-center text-4xl font-bold border border-black bg-white rounded-md p-4 mb-4">My Shopping List</h1>
+            <h2 className="text-center text-4xl font-bold border border-black bg-white rounded-md p-4 mb-4">Meal Ideas</h2>
             <br></br>
             <div>
                 <NewItem onAddItem={handleAddItem} />
-                <ItemList items={items} onItemSelect={handleItemSelect} />
             </div>
-            {selectedItemName && (
-                <div>
-                    <MealIdeas ingredient={selectedItemName} />
+            <div className="flex">
+                <div className="w-1/2">
+                    <ItemList items={items} onItemSelect={handleItemSelect} />
                 </div>
-            )} 
+                {selectedItemName && (
+                    <div className="w-1/2 mt-18 ml-4">
+                        <MealIdeas ingredient={selectedItemName} />
+                    </div>
+                )} 
+            </div>
+
         </main>
     );
 }

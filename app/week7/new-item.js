@@ -30,7 +30,7 @@ export default function NewItem({ onAddItem }) {
     // form 
     // NOTE - browser console displays: `Warning: Each child in a list should have a unique "key" prop.` when a new item is added. This is expected because there is no new id being attributed to the new item.
     return(
-        <form onSubmit={handleSubmit} className="border border-black mx-auto max-w-md bg-white rounded-lg p-4 mb-4">
+        <form onSubmit={handleSubmit} className="border border-black max-w-md bg-white rounded-lg p-4 mb-4">
             <div className="mb-4">
                 <label>Item Name:
                     <input 
