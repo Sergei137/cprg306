@@ -1,5 +1,5 @@
 "use client";
- 
+
 import { useContext, createContext, useState, useEffect } from "react";
 import {
   signInWithPopup,
@@ -40,3 +40,4 @@ export const AuthContextProvider = ({ children }) => {
 export const useUserAuth = () => {
   return useContext(AuthContext);
 };
+

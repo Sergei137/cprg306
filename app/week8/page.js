@@ -1,55 +1,52 @@
+// page.js
+
 "use client";
 
-import { useState, useEffect } from 'react';
-import { useUserAuth } from "./_utils/auth-context";
-import page from './shopping-list/page';
+import React from 'react';
 import Link from 'next/link';
+import { useUserAuth } from "./_utils/auth-context";
 
-function Page() {
-    const [user, setUser] = useState(null);
-    const [gitHubSignIn, setGitHubSignIn] = useState(null);
-    const [firebaseSignOut, setFirebaseSignOut] = useState(null);
-    const [loading, setLoading] = useState(true);
+const LandingPage = () => {
+  const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const { user, gitHubSignIn, firebaseSignOut } = await useUserAuth();
-            setUser(user);
-            setGitHubSignIn(() => gitHubSignIn);
-            setFirebaseSignOut(() => firebaseSignOut);
-            setLoading(false);
-        };
-
-        fetchData();
-    }, []);
-
-    const handleSignIn = async () => {
-        if (gitHubSignIn) {
-            await gitHubSignIn();
-        }
+  const handleLogin = async () => {
+    try {
+      await gitHubSignIn();
+    } catch (error) {
+      console.error('GitHub Sign-In Error:', error);
     }
+  };
 
-    const handleSignOut = async () => {
-        if (firebaseSignOut) {
-            await firebaseSignOut();
-        }
+  const handleLogout = async () => {
+    try {
+      await firebaseSignOut();
+    } catch (error) {
+      console.error('Firebase Sign-Out Error:', error);
     }
+  };
 
-    return (
-        <div>
-            {loading ? (
-                <p>Loading...</p>
-            ) : user ? (
-                <>
-                    <p>Welcome, {user.displayName} ({user.email})</p>
-                    <button onClick={handleSignOut}>Logout</button>
-                    <Page />
-                </>
-            ) : (
-                <button onClick={handleSignIn}>Login</button>
-            )}
+  return (
+    <div className="flex flex-col items-center justify-center">
+      {user ? (
+        // User is logged in
+        <div className="flex flex-col items-center">
+          <p className="text-center text-2xl font-bold">Welcome, {user.displayName} ({user.email})</p>
+          <button className="border border-black bg-blue-500 text-white rounded-lg p-4 mb-4"
+            onClick={handleLogout}>Logout
+          </button>
+          <Link className="border border-black bg-blue-500 text-white rounded-lg p-4 mb-4" href="./week8/shopping-list">Go to Shopping List</Link>
         </div>
-    );
-}
+      ) : (
+        // User is not logged in
+        <div className="flex flex-col items-center">
+          <p className="text-center text-2xl font-bold">Please log in to continue.</p>
+          <button className="border border-black bg-blue-500 text-white rounded-lg p-4 mb-4"
+            onClick={handleLogin}>Login with GitHub
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
 
-export default Page;
+export default LandingPage;

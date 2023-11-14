@@ -6,9 +6,15 @@ import NewItem from './new-item';
 import itemsData from './items.json';
 import MealIdeas from './meal-ideas';
 import { useState } from 'react';
+import { useUserAuth } from "../_utils/auth-context";
 
 // display shopping list page
 function Page() {
+    const { user } = useUserAuth();
+
+    if (!user) {
+        return <p>Please log in to view the shopping list.</p>;
+    }
 
     const [items, setItems] = useState(itemsData); // set items to itemsData
     const [selectedItemName, setSelectedItemName] = useState(''); // set selectedItemName to empty string
