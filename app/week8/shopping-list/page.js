@@ -1,4 +1,4 @@
-// week7 page 
+// week8 page 
 
 "use client";
 import ItemList from './item-list';
@@ -6,19 +6,9 @@ import NewItem from './new-item';
 import itemsData from './items.json';
 import MealIdeas from './meal-ideas';
 import { useState } from 'react';
-import { useUserAuth } from '../_utils/auth-context';
-import { useRouter } from 'next/router';
 
 // display shopping list page
 function Page() {
-    const { user } = useUserAuth();
-    const router = useRouter();
-
-    // If user is not logged in, redirect to landing page
-    if (!user) {
-        router.push('/');
-        return null;
-    }
 
     const [items, setItems] = useState(itemsData); // set items to itemsData
     const [selectedItemName, setSelectedItemName] = useState(''); // set selectedItemName to empty string
