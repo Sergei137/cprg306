@@ -4,6 +4,8 @@
 
 import React from 'react';
 import Link from 'next/link';
+import ItemList from './shopping-list/item-list';
+import NewItem from './shopping-list/new-item';
 import { useUserAuth } from "./_utils/auth-context";
 
 const LandingPage = () => {

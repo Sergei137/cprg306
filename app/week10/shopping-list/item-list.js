@@ -5,6 +5,8 @@ import { useState } from "react"
 import Item from './item'
 
 export default function ItemList({ items, onItemSelect }) {
+
+    // state to store sort by value
     const [sortBy, setSortBy] = useState('category');
 
     // sort items by category, then by name

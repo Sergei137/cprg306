@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 function MealIdeas({ ingredient }) {
     const [meals, setMeals] = useState([]);
 
+    // async function to load meal ideas
     async function loadMealIdeas() { // load meal ideas
         try {
             const data = await fetchMealIdeas(ingredient);
@@ -14,7 +15,8 @@ function MealIdeas({ ingredient }) {
         }
     };
 
-    useEffect(() => { // fetch data from api when ingredient changes by using useEffect hook
+    // fetch data from api when ingredient changes by using useEffect hook
+    useEffect(() => { 
         loadMealIdeas();
     }, [ingredient]);
 

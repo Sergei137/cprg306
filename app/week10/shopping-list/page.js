@@ -1,11 +1,11 @@
-// week8 page 
+// week10 page 
 
 "use client";
 import ItemList from './item-list';
 import NewItem from './new-item';
-import itemsData from './items.json';
 import MealIdeas from './meal-ideas';
-import { useState } from 'react';
+import {getItems, addItem } from "./_services/shopping-list-service"
+import { useState, useEffect } from 'react';
 import { useUserAuth } from "../_utils/auth-context";
 
 // display shopping list page
