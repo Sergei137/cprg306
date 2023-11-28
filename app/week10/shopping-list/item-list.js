@@ -6,7 +6,7 @@ import Item from './item'
 
 export default function ItemList({ items, onItemSelect }) {
 
-    // state to store sort by value
+    // state to store value of sort by
     const [sortBy, setSortBy] = useState('category');
 
     // sort items by category, then by name

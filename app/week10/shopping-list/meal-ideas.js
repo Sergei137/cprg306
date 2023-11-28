@@ -6,7 +6,7 @@ function MealIdeas({ ingredient }) {
     const [meals, setMeals] = useState([]);
 
     // async function to load meal ideas
-    async function loadMealIdeas() { // load meal ideas
+    async function loadMealIdeas() {
         try {
             const data = await fetchMealIdeas(ingredient);
             setMeals(data);

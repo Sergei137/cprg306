@@ -15,7 +15,7 @@ export async function getItems(userId) {
   
     // iterate over each document in querySnapshot
     itemsSnapshot.forEach(doc => {
-        // for each documant, push document ID and data object into items array.
+        // for each documant, push document id and data object into items array.
         items.push({
             id: doc.id,
             data: doc.data()
